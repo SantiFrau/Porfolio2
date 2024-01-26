@@ -6,6 +6,6 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react()],
-  site: 'https://SantiFrau.github.io',
+  site: 'https://santifrau.github.io',
   base: '/Porfolio2',
 });
