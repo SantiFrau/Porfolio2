@@ -1,0 +1,32 @@
+---
+import Image from "./image.jsx"
+import {proyectos} from "../data/proyectos.js"
+
+const {id} = Astro.params
+const idSection = Astro.props.id
+---
+
+
+
+<section id={idSection} class={`pt-24 w-full flex flex-col fondo-cont items-center justify-center gap-3 rounded-lg`}>
+
+  <a href="/#proyectos" class="w-full opacity-50 p-2"><img src="public/icons/back.svg" class="w-10 bg-zinc-900 rounded-full hover:bg-zinc-500"></img></a>
+    <div class={`w-4/5 p-5 ${proyectos[id].color2} rounded-lg flex flex-col gap-3 my-5`}>
+       
+       <Image client:visible id={id}></Image>
+
+      <div class={`flex flex-col gap-3 justify-start ${"text-zinc-400"}`}>
+        <h3 class=" text-lg font-bold text-white">{proyectos[id].name}</h3>
+        <p class="font-mono">{proyectos[id].descripcion}</p>
+        <ul class="font-mono flex flex-row justify-between py-5">
+          {proyectos[id].link.map((d, i) => (
+            <li class="text-warp">
+              <a class="hover:underline hover:text-white hover:border-white border border-black rounded-full p-3" href={d.link} target="_blank" rel="noreferrer">
+                {d.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>

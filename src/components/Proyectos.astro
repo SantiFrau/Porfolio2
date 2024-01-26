@@ -1,0 +1,27 @@
+---
+import {proyectos} from "../data/proyectos.js"
+const {id} = Astro.props
+---
+
+
+
+<section id={id} class="pt-24 w-full h-max flex flex-col items-center justify-center gap-3 rounded-lg">
+    
+    <h3 class="font-bold text-4xl">Proyectos</h3>
+    
+    <div class="grid sm:grid-cols-2 grid-cols-1 p-3 m-5">
+          {
+              proyectos.map((d)=>{
+                  return (
+                      <a href={`${d.id}#proyectos`}>
+                      <div class={`${d.color} hover:scale-110 transition duration-200 m-2  flex flex-col items-center justify-center p-3 rounded-lg`}>
+                       <img class="w-56 rounded-lg" src={`/public/media/${d.id}/1.png`} alt="" />
+                       <h4 class="text-lg font-bold">{d.name}</h4>
+                      </div>
+                      </a>
+                  )
+              })
+          }
+    </div>
+
+  </section>

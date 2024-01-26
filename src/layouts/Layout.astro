@@ -1,0 +1,51 @@
+---
+import Header from "../components/Header.jsx"
+import Inicio from "../components/Inicio.astro";
+import About from "../components/About.astro";
+import { ViewTransitions } from "astro:transitions";
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ViewTransitions></ViewTransitions>
+	</head>
+	<body  >
+		<div class="fixed inset-0 -z-10 h-screen w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]">
+		</div>
+		<div class="flex flex-col items-center justify-center text-white pb-20">
+		<Header client:visible></Header>
+		<div class="flex flex-col gap-40 contenedor">
+			<Inicio id="top"></Inicio>
+	        <About id="sobre-mi"></About>
+			<slot />
+		</div>
+		</div>
+		
+	</body>
+</html>
+
+
+<style>
+	.contenedor{
+		width: 55%;
+		height: max-content;
+	}
+	body{
+		scroll-behavior:smooth;
+	}
+
+	@media screen and (max-width: 768px) {
+		.contenedor{
+			width: 100%;
+		}
+		
+	}
+</style>

@@ -1,0 +1,30 @@
+---
+import ProyectosId from "../components/ProyectosId.astro"
+import Layout from "../layouts/Layout.astro"
+
+export function getStaticPaths(){
+    return(
+        [
+            {
+                params:{id:0}
+            },
+            {
+                params:{id:1}
+            },
+            {
+                params:{id:2}
+            },
+            {
+                params:{id:3}
+            }
+        ]
+    )
+}
+---
+
+<Layout>
+    <ProyectosId id="proyectos">
+
+    </ProyectosId>
+</Layout>
+

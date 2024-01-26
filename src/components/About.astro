@@ -1,0 +1,37 @@
+---
+import {stack} from "../data/stack.js"
+import ColoredText from "../components/Text"
+const {id} = Astro.props
+---
+
+
+
+<section id={id} class="pt-24 w-full h-max flex flex-col items-center justify-center fondo-cont gap-3 rounded-lg">
+          
+    <h3 class="font-bold text-4xl text-start px-5 py-2">Sobre mi</h3>
+    <div class="">
+    <ColoredText client:visible></ColoredText>
+    </div>
+    <h5 class="font-bold text-xl w-full text-start px-5 py-2">Stack de tecnologias</h5>
+    <div class="flex flex-row gap-3 items-end justify-center p-3 flex-wrap">
+     {
+       stack.map((d)=>{
+           let gap
+           if(d.img == "tailwind"){
+                 gap = "gap-4"
+           } else{
+                gap = "gap-2"
+           }
+           return(
+       
+               <div class={`flex flex-col items-center justify-center ${gap} `}>
+                   <img class="w-10" src={`/public/icons/${d.img}.png`} alt={`icon ${d.name}`}></img>
+                   <p>{d.name}</p>
+               </div>
+           )
+       })
+     }
+    </div>
+   
+
+   </section>
