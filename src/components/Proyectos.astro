@@ -14,7 +14,7 @@ const {id} = Astro.props
               proyectos.map((d)=>{
                   return (
                       <a href={`${d.id}#proyectos`}>
-                      <div class={`${d.color} hover:scale-110 transition duration-200 m-2  flex flex-col items-center justify-center p-3 rounded-lg`}>
+                      <div class={`${d.color} hover:scale-110 transition-all m-2  flex flex-col items-center justify-center p-3 rounded-lg`}>
                        <img class="w-56 rounded-lg" src={`/public/media/${d.id}/1.png`} alt="" />
                        <h4 class="text-lg font-bold">{d.name}</h4>
                       </div>
