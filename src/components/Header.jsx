@@ -19,7 +19,7 @@ export default function Header(){
                 return "hidden"
             } else{return "flex"}
          })
-        }} class={`${menu}  opacity-85 w-full md:flex border border-white top-8 md:top-0 fixed transition-all duration-300 bg-gray-900 m-2 md:rounded-full px-10 flex-col md:flex-row gap-10 items-center justify-center`}>
+        }} class={`${menu}  opacity-85 w-3/5 md:flex border border-white top-8 md:top-0 fixed transition-all duration-300 bg-gray-900 m-2 md:rounded-full px-10 flex-col md:flex-row gap-10 items-center justify-center`}>
      
     <a class="p-3 hover:bg-gray-700 rounded-xl px-5" href="#top">Inicio</a>
     <a class="p-3 hover:bg-gray-700 rounded-xl" href="#sobre-mi">Sobre mi</a>
