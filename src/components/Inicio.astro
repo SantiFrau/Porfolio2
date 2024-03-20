@@ -6,14 +6,20 @@ const {id} = Astro.props
 
 <section id={id} class=" py-32 flex flex-col gap-10">
     <div class="flex flex-col md:flex-row gap-5 items-center w-full">
-   <img class="w-48 rounded-full" src="https://imgs.search.brave.com/daq6W-1E3byUT6xxra3KAwC2JiWCQmlrv5S62kmrZ3g/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/c29mdHpvbmUuZXMv/YXBwL3VwbG9hZHMv/MjAxOC8wNC9ndWVz/dC5wbmc" alt="">
+   <img style={{aspectRatio:1/1}} class="w-48 rounded-full object-cover" src="/public/media/perfil.webp" alt="">
+   <div class="flex flex-col gap-3">
    <h1 class="text-4xl font-bold text-white">
     Santiago Frau
    </h1>
+   <h3 class="text-amber-400 shadow-y text-xl">Desarrollador web</h3>
+   
+  </div>
     </div>
+  
    <p class="text-xl p-3 ">
      Soy un <strong class="text-xl">Desarrollador web Front-end</strong> 
-     de Argentina, con experiencia en proyectos personales. 
+     de Argentina, con experiencia en proyectos personales.
+     Estudiante de sistemas 
    </p>
 
    <div class="flex flex-row gap-3 text-zinc-400 justify-center md:justify-end items-center">
@@ -25,3 +31,12 @@ const {id} = Astro.props
 
 
 </div>
+
+<style>
+
+
+.shadow-y{
+  text-shadow: 4px 1px 4px #eca50d;
+}
+
+</style>
